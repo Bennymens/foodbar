@@ -1,34 +1,12 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build",
-  "routes": [
-    {
-      "src": "/css/(.*)",
-      "dest": "/css/$1"
-    },
-    {
-      "src": "/js/(.*)",
-      "dest": "/js/$1"
-    },
-    {
-      "src": "/img/(.*)",
-      "dest": "/img/$1"
-    },
-    {
-      "src": "/vendors/(.*)",
-      "dest": "/vendors/$1"
-    },
-    {
-      "src": "/fonts/(.*)",
-      "dest": "/fonts/$1"
-    },
-    {
-      "src": "/(.*).html",
-      "dest": "/$1.html"
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/about-us.html" },
+    { "source": "/menu", "destination": "/menu.html" },
+    { "source": "/gallery", "destination": "/gallery.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/book-table", "destination": "/book-table.html" },
+    { "source": "/elements", "destination": "/elements.html" }
   ]
 }
