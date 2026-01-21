@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Longdon Foods Restaurant Website",
   "scripts": {
-    "build": "sass scss/style.scss css/style.css --style compressed",
+    "build": "sass scss/style.scss css/style.css --style compressed --no-source-map",
     "dev": "sass --watch scss/style.scss css/style.css",
     "vercel-build": "npm run build"
   },
