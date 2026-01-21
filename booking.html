@@ -64,6 +64,62 @@
         display: block;
         text-align: left;
       }
+      
+      .book_table_form select.form-control {
+        appearance: auto;
+        -webkit-appearance: menulist;
+        -moz-appearance: menulist;
+        cursor: pointer;
+        padding: 0 15px;
+      }
+      
+      .book_table_form select.form-control:focus {
+        outline: none;
+        box-shadow: none;
+        background-color: #fff;
+        border-color: #ced4da;
+      }
+      
+      /* Prevent nice-select from transforming our select */
+      .book_table_form select {
+        display: block !important;
+        opacity: 1 !important;
+        position: static !important;
+        visibility: visible !important;
+        font-size: 13px !important;
+        color: #999 !important;
+      }
+      
+      .book_table_form .nice-select {
+        display: none !important;
+      }
+      
+      .book_table_form .submit_btn {
+        padding: 0px 40px !important;
+        background: #f42f2c !important;
+        z-index: 2;
+        display: inline-block !important;
+        transition: all 400ms linear;
+        text-align: center;
+        color: #fff !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        line-height: 48px !important;
+        height: 48px !important;
+        border: 1px solid #f42f2c !important;
+        border-radius: 5px !important;
+        text-transform: capitalize;
+        box-shadow: -10px 10px 40px rgba(244, 47, 44, 0.32) !important;
+        width: auto !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+      }
+      
+      .book_table_form .submit_btn:hover {
+        background: rgba(0, 0, 0, 0) !important;
+        color: #f42f2c !important;
+        box-shadow: none !important;
+      }
 
       .book_table_form input[type="datetime-local"],
       .book_table_form input[type="text"] {
@@ -271,7 +327,7 @@
                   />
                 </div>
                 <div class="form-group col-md-12">
-                  <select class="form-control">
+                  <select class="form-control" id="event" name="event">
                     <option value="">Select event</option>
                     <option value="weddings">Weddings</option>
                     <option value="parties">Parties</option>
@@ -294,7 +350,7 @@
                     value="submit"
                     class="btn submit_btn form-control"
                   >
-                    Make Reservation
+                    Book now
                   </button>
                 </div>
               </form>
