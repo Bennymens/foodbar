@@ -79,8 +79,24 @@
       
       /* iOS Safari specific fixes */
       .book_table_form input[type="datetime-local"]::-webkit-datetime-edit {
-        text-align: left;
-        padding-left: 0;
+        text-align: left !important;
+        padding-left: 0 !important;
+        display: inline-block !important;
+      }
+      
+      .book_table_form input[type="datetime-local"]::-webkit-datetime-edit-fields-wrapper {
+        text-align: left !important;
+        padding: 0 !important;
+      }
+      
+      .book_table_form input[type="datetime-local"]::-webkit-datetime-edit-text,
+      .book_table_form input[type="datetime-local"]::-webkit-datetime-edit-month-field,
+      .book_table_form input[type="datetime-local"]::-webkit-datetime-edit-day-field,
+      .book_table_form input[type="datetime-local"]::-webkit-datetime-edit-year-field,
+      .book_table_form input[type="datetime-local"]::-webkit-datetime-edit-hour-field,
+      .book_table_form input[type="datetime-local"]::-webkit-datetime-edit-minute-field,
+      .book_table_form input[type="datetime-local"]::-webkit-datetime-edit-ampm-field {
+        text-align: left !important;
       }
       
       .book_table_form .form-group {
