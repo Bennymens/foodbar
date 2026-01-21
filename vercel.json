@@ -1,13 +1,13 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/about", "destination": "/templates/about-us.html" },
-    { "source": "/menu", "destination": "/templates/menu.html" },
-    { "source": "/gallery", "destination": "/templates/gallery.html" },
-    { "source": "/blog", "destination": "/templates/blog.html" },
-    { "source": "/contact", "destination": "/templates/contact.html" },
-    { "source": "/book-table", "destination": "/templates/book-table.html" },
-    { "source": "/elements", "destination": "/templates/elements.html" },
-    { "source": "/single-blog", "destination": "/templates/single-blog.html" }
+    { "source": "/about", "destination": "/about-us.html" },
+    { "source": "/menu", "destination": "/menu.html" },
+    { "source": "/gallery", "destination": "/gallery.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/book-table", "destination": "/book-table.html" },
+    { "source": "/elements", "destination": "/elements.html" },
+    { "source": "/single-blog", "destination": "/single-blog.html" }
   ]
 }
