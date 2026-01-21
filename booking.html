@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <style>
+      @media (max-width: 768px) {
+        .navbar-brand img {
+          content: url("img/london_foods_logo_1-removebg-preview.png");
+        }
+      }
       .book_table_area .container {
         max-width: 1400px;
       }
@@ -57,10 +62,17 @@
         box-sizing: border-box;
       }
       
+      .book_table_form input[type="datetime-local"] {
+        padding: 0 15px;
+        line-height: 50px;
+      }
+      
       /* Mobile fixes */
       @media (max-width: 991px) {
-        body {
+        html, body {
           overflow-x: hidden;
+          position: relative;
+          width: 100%;
         }
         .book_table_area .container {
           max-width: 100%;
@@ -78,6 +90,12 @@
         }
         .book_table_form .form-control {
           max-width: 100%;
+          font-size: 16px; /* Prevents auto-zoom on iOS */
+        }
+        .book_table_form input,
+        .book_table_form select,
+        .book_table_form textarea {
+          font-size: 16px; /* Prevents auto-zoom on iOS */
         }
       }
     </style>
@@ -215,11 +233,12 @@
                 </div>
                 <div class="form-group col-md-12">
                   <input
-                    type="datetime-local"
+                    type="text"
                     class="form-control"
                     id="datetime"
                     name="datetime"
-                    placeholder="Select date & time"
+                    placeholder="Select date & time (MM/DD/YYYY HH:MM)"
+                    onfocus="(this.type='datetime-local')"
                   />
                 </div>
                 <div class="form-group col-md-12">
