@@ -1,22 +1,5 @@
 {
   "name": "longdon-foods",
   "version": "1.0.0",
-  "description": "Longdon Foods Restaurant Website",
-  "scripts": {
-    "build": "sass scss/style.scss css/style.css --style compressed --no-source-map",
-    "dev": "sass --watch scss/style.scss css/style.css"
-  },
-  "keywords": [
-    "restaurant",
-    "food",
-    "website"
-  ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "nodemailer": "^6.9.7"
-  },
-  "devDependencies": {
-    "sass": "^1.69.5"
-  }
+  "private": true
 }
