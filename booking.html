@@ -59,17 +59,24 @@
         height: 50px;
         font-size: 15px;
         width: 100%;
+        max-width: 100%;
         box-sizing: border-box;
+        display: block;
       }
-      
-      .book_table_form input[type="datetime-local"] {
+
+      .book_table_form input[type="datetime-local"],
+      .book_table_form input[type="text"] {
         padding: 0 15px;
         line-height: 50px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
       }
-      
+
       /* Mobile fixes */
       @media (max-width: 991px) {
-        html, body {
+        html,
+        body {
           overflow-x: hidden;
           position: relative;
           width: 100%;
@@ -237,8 +244,8 @@
                     class="form-control"
                     id="datetime"
                     name="datetime"
-                    placeholder="Select date & time (MM/DD/YYYY HH:MM)"
-                    onfocus="(this.type='datetime-local')"
+                    placeholder="Select date & time"
+                    onfocus="this.type = 'datetime-local'"
                   />
                 </div>
                 <div class="form-group col-md-12">
