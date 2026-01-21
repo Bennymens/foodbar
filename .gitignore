@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+.vercel
+*.log
+.cache
+dist/
+.env
+.env.local
+prepros-6.config
