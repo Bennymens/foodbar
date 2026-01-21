@@ -297,29 +297,4 @@
       ],
     });
   }
-
-  // Mobile map touch handling - prevent page scrolling when interacting with map
-  function initMobileMapTouch() {
-    if (window.innerWidth <= 768) {
-      var mapBox = document.querySelector(".mapBox");
-      if (mapBox) {
-        // Enable map interaction on tap
-        mapBox.addEventListener("click", function (e) {
-          this.classList.add("active");
-        });
-
-        // Disable when touching outside the map
-        document.addEventListener("touchstart", function (e) {
-          if (mapBox && !mapBox.contains(e.target)) {
-            mapBox.classList.remove("active");
-          }
-        });
-      }
-    }
-  }
-
-  // Initialize on page load
-  $(document).ready(function () {
-    initMobileMapTouch();
-  });
 })(jQuery);
