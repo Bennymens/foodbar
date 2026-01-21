@@ -62,15 +62,29 @@
         max-width: 100%;
         box-sizing: border-box;
         display: block;
+        text-align: left;
       }
 
       .book_table_form input[type="datetime-local"],
       .book_table_form input[type="text"] {
         padding: 0 15px;
         line-height: 50px;
-        width: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
         min-width: 100%;
+        text-align: left !important;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+      
+      /* iOS Safari specific fixes */
+      .book_table_form input[type="datetime-local"]::-webkit-datetime-edit {
+        text-align: left;
+        padding-left: 0;
+      }
+      
+      .book_table_form .form-group {
+        overflow: hidden;
       }
 
       /* Mobile fixes */
@@ -185,15 +199,7 @@
               <a href="book-table.html">Booking</a>
             </div>
           </div>
-        </div>
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
-        <div class="shape shape4"></div>
-        <div class="shape shape5"></div>
-        <div class="shape shape6"></div>
-        <div class="shape shape7"></div>
-      </div>
+        
     </section>
     <!--================End Banner Area =================-->
 
