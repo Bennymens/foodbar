@@ -53,6 +53,32 @@
       .book_table_form .form-control {
         height: 50px;
         font-size: 15px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      
+      /* Mobile fixes */
+      @media (max-width: 991px) {
+        body {
+          overflow-x: hidden;
+        }
+        .book_table_area .container {
+          max-width: 100%;
+          overflow-x: hidden;
+        }
+        .book_table_inner .col-lg-5 {
+          margin-right: 0;
+        }
+        .table_form {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        .table_img {
+          margin-bottom: 30px;
+        }
+        .book_table_form .form-control {
+          max-width: 100%;
+        }
       }
     </style>
   </head>
