@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.longdonfoods.com/sitemap.xml
+Sitemap: https://www.longdonfoods.org/sitemap.xml
