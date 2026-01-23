@@ -168,8 +168,6 @@
           <div class="col-lg-9">
             <form
               class="row contact_form"
-              action="contact_process.php"
-              method="post"
               id="contactForm"
               novalidate="novalidate"
             >
@@ -224,6 +222,38 @@
       </div>
     </section>
     <!--================Contact Area =================-->
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center py-5">
+            <div class="mb-4">
+              <i class="fa fa-check-circle" style="font-size: 80px; color: #28a745;"></i>
+            </div>
+            <h3 class="mb-3">Message Sent!</h3>
+            <p class="mb-4">Thank you for contacting Longdon Foods. We'll get back to you soon.</p>
+            <button type="button" class="btn submit_btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center py-5">
+            <div class="mb-4">
+              <i class="fa fa-times-circle" style="font-size: 80px; color: #dc3545;"></i>
+            </div>
+            <h3 class="mb-3">Oops!</h3>
+            <p class="mb-4">Something went wrong. Please try again later or contact us directly.</p>
+            <button type="button" class="btn submit_btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--================ start footer Area  =================-->
     <footer class="footer-area p_120">
@@ -366,5 +396,45 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="js/gmaps.min.js"></script>
     <script src="js/theme.js"></script>
+    
+    <!-- EmailJS Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function() {
+        emailjs.init("ksElXW6TD2gicW8yO"); // Your Public Key
+      })();
+
+      document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault(); // stop form from submitting normally
+
+        console.log("Form submitted, attempting to send email...");
+
+        // Disable submit button during sending
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
+
+        // Send form data directly using sendForm
+        emailjs.sendForm(
+          "service_ox98g8n",    // Your Service ID
+          "template_vcu9y0l",   // Your Template ID
+          this                   // The form element itself
+        )
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          $('#successModal').modal('show');
+          document.getElementById("contactForm").reset(); // clears form
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }, function(error) {
+          console.log('FAILED...', error);
+          console.log('Error details:', JSON.stringify(error));
+          $('#errorModal').modal('show');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        });
+      });
+    </script>
   </body>
 </html>
