@@ -8,11 +8,11 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="img/favicon.png?v=2" type="image/png" />
-    <title>Contact Us - Get in Touch with Longdon Foods | Plantain Chips & Groundnuts</title>
+    <title>Contact Us & Book Events - Longdon Foods | Plantain Chips & Catering</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Contact Longdon Foods for inquiries about our plantain chips and coated groundnuts. Reach out for orders, questions, or partnership opportunities." />
-    <meta name="keywords" content="contact Longdon Foods, plantain chips supplier, coated groundnuts contact, snack company contact, get in touch" />
+    <meta name="description" content="Contact Longdon Foods for orders, event catering, and inquiries. We supply plantain chips and groundnuts for weddings, parties, corporate events, and more." />
+    <meta name="keywords" content="contact Longdon Foods, event catering, plantain chips supplier, book catering, wedding snacks, party catering, corporate events" />
     <meta name="author" content="Longdon Foods" />
     
     <!-- Open Graph Meta Tags -->
@@ -102,9 +102,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="gallery.html">Gallery</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="booking.html">Bookings</a>
-                </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="contact.html">Contact</a>
                 </li>
@@ -121,10 +118,10 @@
       <div class="banner_inner d-flex align-items-center">
         <div class="container">
           <div class="banner_content text-center">
-            <h1>Contact Us</h1>
+            <h1>Contact Us & Book Events</h1>
             <div class="page_link">
               <a href="../index.html">Home</a>
-              <a href="contact.html">Contact Us</a>
+              <a href="contact.html">Contact & Bookings</a>
             </div>
           </div>
         
@@ -171,6 +168,11 @@
               id="contactForm"
               novalidate="novalidate"
             >
+              <div class="col-md-12 mb-3">
+                <h4>Get In Touch</h4>
+                <p>Send us a message, place an order, or book us for your event!</p>
+              </div>
+              
               <div class="col-md-6">
                 <div class="form-group">
                   <input
@@ -179,6 +181,7 @@
                     id="name"
                     name="name"
                     placeholder="Enter your name"
+                    required
                   />
                 </div>
                 <div class="form-group">
@@ -188,26 +191,65 @@
                     id="email"
                     name="email"
                     placeholder="Enter email address"
+                    required
                   />
                 </div>
                 <div class="form-group">
                   <input
                     type="text"
                     class="form-control"
-                    id="subject"
-                    name="subject"
-                    placeholder="Enter Subject"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone Number"
                   />
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
+                  <select class="form-control" id="inquiry_type" name="inquiry_type">
+                    <option value="">Select Inquiry Type</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="order">Place Order</option>
+                    <option value="event">Book for Event/Catering</option>
+                    <option value="bulk">Bulk Order</option>
+                  </select>
+                </div>
+                <div class="form-group" id="event_type_group" style="display: none;">
+                  <select class="form-control" id="event_type" name="event_type">
+                    <option value="">Select Event Type (Optional)</option>
+                    <option value="weddings">Weddings</option>
+                    <option value="parties">Parties</option>
+                    <option value="corporate">Corporate Events</option>
+                    <option value="picnics">Picnics</option>
+                    <option value="birthday">Birthday Parties</option>
+                    <option value="graduation">Graduation Ceremonies</option>
+                    <option value="anniversary">Anniversary Celebrations</option>
+                    <option value="conference">Conferences & Seminars</option>
+                    <option value="baby-shower">Baby Showers</option>
+                    <option value="bridal-shower">Bridal Showers</option>
+                    <option value="networking">Networking Events</option>
+                    <option value="fundraiser">Fundraisers</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group" id="event_date_group" style="display: none;">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="event_date"
+                    name="event_date"
+                    placeholder="Event Date & Time (Optional)"
+                    onfocus="this.type = 'datetime-local'"
+                  />
+                </div>
+                <div class="form-group">
                   <textarea
                     class="form-control"
                     name="message"
                     id="message"
-                    rows="1"
+                    rows="5"
                     placeholder="Enter Message"
+                    required
                   ></textarea>
                 </div>
               </div>
@@ -404,6 +446,31 @@
         emailjs.init("ksElXW6TD2gicW8yO"); // Your Public Key
       })();
 
+      // Initialize nice-select for the dropdowns
+      $(document).ready(function() {
+        $('#inquiry_type').niceSelect();
+        $('#event_type').niceSelect();
+        
+        // Show/hide event-specific fields based on inquiry type
+        $('#inquiry_type').on('change', function() {
+          const eventTypeGroup = $('#event_type_group');
+          const eventDateGroup = $('#event_date_group');
+          
+          if ($(this).val() === "event") {
+            eventTypeGroup.show();
+            eventDateGroup.show();
+            // Update nice-select to show properly
+            $('#event_type').niceSelect('update');
+          } else {
+            eventTypeGroup.hide();
+            eventDateGroup.hide();
+            // Clear the values when hidden
+            $('#event_type').val('').niceSelect('update');
+            $('#event_date').val('');
+          }
+        });
+      });
+
       document.getElementById("contactForm").addEventListener("submit", function(e) {
         e.preventDefault(); // stop form from submitting normally
 
@@ -425,6 +492,9 @@
           console.log('SUCCESS!', response.status, response.text);
           $('#successModal').modal('show');
           document.getElementById("contactForm").reset(); // clears form
+          // Hide event fields after reset
+          document.getElementById("event_type_group").style.display = "none";
+          document.getElementById("event_date_group").style.display = "none";
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
         }, function(error) {
