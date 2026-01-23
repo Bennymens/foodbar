@@ -47,6 +47,8 @@
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Masonry Gallery CSS -->
+    <link rel="stylesheet" href="css/masonry.css" />
     <style>
       @media (max-width: 768px) {
         .navbar-brand img {
@@ -154,8 +156,14 @@
             </div>
           </div>
         </div>
-
-        <div class="row" id="lightgallery">
+      </div>
+      
+      <div class="container-fluid px-4">
+        <div id="masonry-container"></div>
+      </div>
+      
+      <div class="container">
+        <div class="row" id="lightgallery" style="display: none;">
           <div class="col-lg-7 all-image" data-src="img/gallery/Chips8.jpeg">
             <div class="single-gallery">
               <div class="overlay"></div>
@@ -805,5 +813,73 @@
     <script src="vendors/swiper/js/swiper.min.js"></script>
     <script src="vendors/scroll/jquery.mCustomScrollbar.js"></script>
     <script src="js/theme.js"></script>
+    
+    <!-- GSAP and Masonry Gallery -->
+    <script src="node_modules/gsap/dist/gsap.min.js"></script>
+    <script src="js/masonry-gallery.js"></script>
+    <script>
+      // Initialize masonry gallery with your images
+      const galleryItems = [
+        { id: "1", img: "img/gallery/Chips8.jpeg", height: 600 },
+        { id: "2", img: "img/gallery/Chips5.jpeg", height: 400 },
+        { id: "3", img: "img/gallery/Chips4.jpeg", height: 500 },
+        { id: "4", img: "img/gallery/Chips2.jpeg", height: 450 },
+        { id: "5", img: "img/gallery/Chips1.jpeg", height: 500 },
+        { id: "6", img: "img/gallery/9C8A6B7E-8FAE-4C6C-834F-279A22EDE6EE.jpg", height: 400 },
+        { id: "7", img: "img/gallery/IMG_0601.png", height: 600 },
+        { id: "8", img: "img/gallery/IMG_0603.png", height: 500 },
+        { id: "9", img: "img/gallery/IMG_1993.jpg", height: 450 },
+        { id: "10", img: "img/gallery/IMG_1994.jpg", height: 500 },
+        { id: "11", img: "img/gallery/IMG_1999.jpg", height: 600 },
+        { id: "12", img: "img/gallery/IMG_2006.jpg", height: 400 },
+        { id: "13", img: "img/gallery/IMG_2010.jpg", height: 450 },
+        { id: "14", img: "img/gallery/IMG_4105.png", height: 500 },
+        { id: "15", img: "img/gallery/IMG_2007.jpg", height: 450 },
+        { id: "16", img: "img/gallery/IMG_2137 2.jpg", height: 400 },
+        { id: "17", img: "img/gallery/IMG_2138.jpg", height: 600 },
+        { id: "18", img: "img/gallery/IMG_2142.jpg", height: 500 },
+        { id: "19", img: "img/gallery/IMG_2153.jpg", height: 450 },
+        { id: "20", img: "img/gallery/IMG_2159.jpg", height: 500 },
+        { id: "21", img: "img/gallery/IMG_2161.jpg", height: 600 },
+        { id: "22", img: "img/gallery/IMG_2162.jpg", height: 400 },
+        { id: "23", img: "img/gallery/IMG_8949.png", height: 500 },
+        { id: "24", img: "img/gallery/IMG_8955.png", height: 450 },
+        { id: "25", img: "img/gallery/IMG_9509.jpg", height: 500 },
+        { id: "26", img: "img/gallery/IMG_9510.jpg", height: 400 },
+        { id: "27", img: "img/gallery/IMG_9744.png", height: 600 },
+        { id: "28", img: "img/gallery/IMG_9842.png", height: 500 },
+        { id: "29", img: "img/gallery/IMG_7929.png", height: 450 },
+        { id: "30", img: "img/gallery/IMG_8015.png", height: 400 },
+        { id: "31", img: "img/gallery/IMG_8269.png", height: 600 },
+        { id: "32", img: "img/gallery/IMG_8018.png", height: 500 },
+        { id: "33", img: "img/gallery/IMG_8900.png", height: 450 },
+        { id: "34", img: "img/gallery/IMG_8920.png", height: 500 },
+        { id: "35", img: "img/gallery/IMG_8947.png", height: 600 },
+        { id: "36", img: "img/gallery/IMG_7690.png", height: 400 },
+        { id: "37", img: "img/gallery/IMG_7645.png", height: 450 },
+        { id: "38", img: "img/gallery/IMG_7608.png", height: 500 },
+        { id: "39", img: "img/gallery/IMG_7601.png", height: 450 }
+      ];
+
+      // Initialize gallery when DOM is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('masonry-container');
+        
+        if (container) {
+          new MasonryGallery({
+            container: container,
+            items: galleryItems,
+            ease: 'power3.out',
+            duration: 0.6,
+            stagger: 0.05,
+            animateFrom: 'bottom',
+            scaleOnHover: true,
+            hoverScale: 0.95,
+            blurToFocus: true,
+            colorShiftOnHover: false
+          });
+        }
+      });
+    </script>
   </body>
 </html>
