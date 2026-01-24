@@ -1,0 +1,28 @@
+/* Banner (home_banner) custom mobile image cropping */
+@media (max-width: 991px) {
+  .home_banner .face-img {
+    display: block !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .home_banner {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px; /* Adjust as needed for your design */
+  }
+  .home_banner .face-img {
+    position: absolute;
+    right: -60vw; /* Pushes more of the image off the right edge, revealing more text */
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100vw;
+    max-width: none;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    transition: right 0.3s;
+    display: block !important;
+  }
+}
