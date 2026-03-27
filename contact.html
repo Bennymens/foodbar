@@ -41,6 +41,7 @@
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/contact-redesign.css" />
     <style>
       @media (max-width: 768px) {
         .navbar-brand img {
@@ -51,211 +52,270 @@
   </head>
 
   <body>
-    <!--================Header Menu Area =================-->
-    <header class="header_area">
-      <div class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="../index.html">
-              <img
-                class="logo-1"
-                src="img/lomgdon_foods_logo_2-removebg-preview.png"
-                alt=""
-                style="max-height: 80px"
-              />
-              <img
-                class="logo-2"
-                src="img/lomgdon_foods_logo_2-removebg-preview.png"
-                alt=""
-                style="max-height: 80px"
-              />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div
-              class="collapse navbar-collapse offset"
-              id="navbarSupportedContent"
-            >
-              <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about-us.html">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="menu.html">Menu</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="gallery.html">Gallery</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+    <!--================ Redesigned Navbar =================-->
+    <nav class="swb-navbar">
+      <div class="swb-nav-left" style="gap: 15px;">
+        <a href="contact.html" class="swb-btn-outline">CONTACT</a>
+        <a href="#" class="swb-btn-outline swb-btn-outline-lang">EN</a>
       </div>
-    </header>
-    <!--================Header Menu Area =================-->
-
-    <!--================ Banner Area =================-->
-    <section class="banner_area">
-      <div class="banner_inner d-flex align-items-center">
-        <div class="container">
-          <div class="banner_content text-center">
-            <h1>Contact Us & Book Events</h1>
-            <div class="page_link">
-              <a href="../index.html">Home</a>
-              <a href="contact.html">Contact & Bookings</a>
-            </div>
+      <div class="swb-nav-center">
+        <a href="../index.html">
+          <img src="img/lomgdon_foods_logo_2-removebg-preview.png" onerror="this.src='img/logo.png'" alt="Longdon Foods" style="height: 100px; filter: brightness(0) invert(1);" />
+        </a>
+      </div>
+      <div class="swb-nav-right">
+        <button class="swb-menu-btn" id="menuOpenBtn">
+          MENU
+          <div class="swb-hamburger">
+            <span></span>
+            <span></span>
           </div>
-        
-    </section>
-    <!--================End Banner Area =================-->
+        </button>
+      </div>
+    </nav>
+    
+    <!-- Fullscreen Menu Overlay Redesign -->
+    <div class="swb-menu-overlay" id="menuOverlay">
+      <div class="swb-overlay-header">
+        <div style="display:flex; gap:15px;">
+           <a href="contact.html" class="swb-btn-outline">CONTACT</a>
+           <a href="#" class="swb-btn-outline swb-btn-outline-lang">EN</a>
+        </div>
+        <button class="swb-menu-close" id="menuCloseBtn">BACK ✕</button>
+      </div>
 
-    <!--================Contact Area =================-->
-    <section class="contact_area p_120">
+      <div class="swb-overlay-content">
+        <div class="swb-overlay-left">
+          <ul class="swb-menu-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="bookings.html">Bookings</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="swb-overlay-right">
+          <div class="swb-overlay-marker">Our Snacks</div>
+          <ul class="swb-product-list">
+            <li>Plantain Power</li>
+            <li>Funky Groundnuts</li>
+            <li>A-Maize-Ing Chips</li>
+            <li>Root Rizz</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="swb-overlay-socials">
+        <a href="#" class="swb-overlay-social-btn"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="swb-overlay-social-btn"><i class="fa fa-tiktok"></i><img src="" style="display:none;" onerror="this.parentElement.innerHTML='<svg viewBox=\'0 0 448 512\' fill=\'white\' width=\'16\'><path d=\'M448 209.9a210.1 210.1 0 01-122.8-39.3v178.8A162.6 162.6 0 11185 188.3v89.9a74.6 74.6 0 1052.2 71.2V0h88a121 121 0 00122.8 121z\'/></svg>'"/></a>
+        <a href="#" class="swb-overlay-social-btn"><i class="fa fa-spotify"></i></a>
+        <a href="#" class="swb-overlay-social-btn"><i class="fa fa-youtube-play"></i></a>
+        <a href="#" class="swb-overlay-social-btn"><i class="fa fa-linkedin"></i></a>
+      </div>
+
+      <div class="swb-overlay-img">
+        <img src="https://dummyimage.com/600x600/222/555.png&text=Snack+Image" alt="Snacks" />
+      </div>
+    </div>
+    <!--================End Redesigned Navbar =================-->
+
+    <!--================ Redesigned Contact Area =================-->
+    <div class="redesign-contact-wrapper">
       <div class="container">
-        <div class="mapBox" style="height: 420px; margin-bottom: 80px;">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7347780423092!2d-0.2323198!3d5.6061385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf99c02cc2149d%3A0x1ac16909ca639c5a!2sCapitol%20Catering!5e0!3m2!1sen!2sgh!4v1773346434157!5m2!1sen!2sgh" width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="contact_info">
-              <div class="info_item">
-                <i class="lnr lnr-home"></i>
-                <h6>Accra , Ghana</h6>
-                <p>Tesano</p>
-              </div>
-              <div class="info_item">
-                <i class="lnr lnr-phone-handset"></i>
-                <h6><a href="#">+233 53 722 5557</a></h6>
-                <p>Mon to Fri 9am to 6 pm</p>
-              </div>
-              <div class="info_item">
-                <i class="lnr lnr-envelope"></i>
-                <h6><a href="mailto:info@longdonfoods.com">info@longdonfoods.com</a></h6>
-                <p>Send us your query anytime!</p>
+        
+        <!-- Header & Info -->
+        <div class="contact-header__wrap">
+          <h1 class="heading--huge">Contact</h1>
+          <p style="font-size: 18px; line-height: 1.5; color: rgba(255,255,255,0.6); margin: 0 auto;">Looking to cater your event or place an order? Get in touch with us!</p>
+          
+          <div class="contact-header__content-wrap">
+            <div class="contact-header__content-info">
+              <div class="heading--32 text-color--green">CONTACT INFO</div>
+              <a href="#" class="text-style--link"><div class="heading--16 mt-3">Tesano, Accra, Ghana</div></a>
+              <a href="tel:+233537225557" class="text-style--link"><div class="heading--16 mt-2">+233 53 722 5557</div></a>
+              <a href="mailto:info@longdonfoods.com" class="text-style--link"><div class="heading--16 mt-2">info@longdonfoods.com</div></a>
+              <div class="mt-4">
+                <a href="#contactForm" class="btn--yellow" style="text-decoration:none; transform: scale(0.8); transform-origin: left;">
+                  <div class="btn__background">
+                    <div class="btn__bg-big bg--green"></div>
+                    <div class="btn__bg-big bg--pink"></div>
+                    <div class="btn__bg-big bg--yellow"></div>
+                  </div>
+                  <span class="btn__text" style="color:#101820; font-weight:800; font-size:18px;">TALK TO US</span>
+                </a>
               </div>
             </div>
-          </div>
-          <div class="col-lg-9">
-            <form
-              class="row contact_form"
-              id="contactForm"
-              novalidate="novalidate"
-            >
-              <div class="col-md-12 mb-3">
-                <h4>Get In Touch</h4>
-                <p>Send us a message, place an order, or book us for your event!</p>
-              </div>
-              
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your name"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    placeholder="Enter email address"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="phone"
-                    name="phone"
-                    placeholder="Phone Number"
-                  />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <select class="form-control" id="inquiry_type" name="inquiry_type">
-                    <option value="">Select Inquiry Type</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="order">Place Order</option>
-                    <option value="event">Book for Event/Catering</option>
-                    <option value="bulk">Bulk Order</option>
-                  </select>
-                </div>
-                <div class="form-group" id="event_type_group" style="display: none;">
-                  <select class="form-control" id="event_type" name="event_type">
-                    <option value="">Select Event Type (Optional)</option>
-                    <option value="weddings">Weddings</option>
-                    <option value="parties">Parties</option>
-                    <option value="corporate">Corporate Events</option>
-                    <option value="picnics">Picnics</option>
-                    <option value="birthday">Birthday Parties</option>
-                    <option value="graduation">Graduation Ceremonies</option>
-                    <option value="anniversary">Anniversary Celebrations</option>
-                    <option value="conference">Conferences & Seminars</option>
-                    <option value="baby-shower">Baby Showers</option>
-                    <option value="bridal-shower">Bridal Showers</option>
-                    <option value="networking">Networking Events</option>
-                    <option value="fundraiser">Fundraisers</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div class="form-group" id="event_date_group" style="display: none;">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="event_date"
-                    name="event_date"
-                    placeholder="Event Date & Time (Optional)"
-                    onfocus="this.type = 'datetime-local'"
-                  />
-                </div>
-                <div class="form-group">
-                  <textarea
-                    class="form-control"
-                    name="message"
-                    id="message"
-                    rows="5"
-                    placeholder="Enter Message"
-                    required
-                  ></textarea>
-                </div>
-              </div>
-              <div class="col-md-12 text-right">
-                <button type="submit" value="submit" class="btn submit_btn">
-                  Send Message
-                </button>
-              </div>
-            </form>
+            <div class="contact-header__img">
+              <img src="https://dummyimage.com/800x600/222/555.png&text=Longdon+Foods" alt="Longdon Foods Contact" style="border-radius: 40px; max-width: 100%; object-fit: cover; aspect-ratio: 4/3;"/>
+            </div>
           </div>
         </div>
+
+        <!-- Form Section -->
+        <div class="faq__wrapper" style="margin-top: 150px;">
+          <h2 class="heading--120 text-color--green" style="font-size: clamp(40px, 6vw, 80px);">Send a message!</h2>
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+              <form class="contact_form" id="contactForm" novalidate="novalidate">
+                <div class="row">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required />
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required />
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" />
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-control" id="inquiry_type" name="inquiry_type" style="display: block; width: 100%;">
+                      <option value="">Select Inquiry Type</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="order">Place Order</option>
+                      <option value="event">Book for Event/Catering</option>
+                      <option value="bulk">Bulk Order</option>
+                    </select>
+
+                    <div id="event_type_group" style="display: none; width: 100%;">
+                      <select class="form-control" id="event_type" name="event_type" style="display: block; width: 100%;">
+                        <option value="">Select Event Type (Optional)</option>
+                        <option value="weddings">Weddings</option>
+                        <option value="parties">Parties</option>
+                        <option value="corporate">Corporate Events</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <div id="event_date_group" style="display: none; width: 100%;">
+                      <input type="text" class="form-control" id="event_date" name="event_date" placeholder="Event Date & Time (Optional)" onfocus="this.type = 'datetime-local'" />
+                    </div>
+
+                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message" required style="resize: none;"></textarea>
+                  </div>
+                  <div class="col-md-12 text-center mt-4">
+                    <button type="submit" value="submit" class="btn--yellow">
+                      <div class="btn__background">
+                        <div class="btn__bg-big bg--green"></div>
+                        <div class="btn__bg-big bg--pink"></div>
+                        <div class="btn__bg-big bg--yellow"></div>
+                      </div>
+                      <span class="btn__text" style="color:#101820; font-weight:800; font-size:24px;">SEND MESSAGE</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Box Section -->
+        <div class="sample-box-section">
+          <div class="sample-box-text">
+            <div class="swb-snack-first">Snack<br>first?</div>
+            <h1 style="font-size: clamp(60px, 12vw, 150px); font-weight: 900; line-height: 0.9; text-transform: uppercase; margin-bottom: 40px; color:#fff; white-space: nowrap; margin-top: 40px; margin-left: -20px;">Request a<br>sample box!</h1>
+            <a href="#contactForm" class="btn--yellow" style="text-decoration:none;">
+              <div class="btn__background">
+                <div class="btn__bg-big bg--green"></div>
+                <div class="btn__bg-big bg--pink"></div>
+                <div class="btn__bg-big bg--yellow"></div>
+              </div>
+              <span class="btn__text" style="color:#101820; font-weight:800; font-size:18px;">REQUEST A TRIAL BOX</span>
+            </a>
+          </div>
+          <div class="sample-box-images">
+             <img src="https://dummyimage.com/400x600/222/555.png&text=Photo+1" alt="Sample Box 1" style="height: 350px; width: 250px; object-fit: cover; border-radius: 20px; transform: rotate(-5deg); z-index: 2; border: 4px solid #101820;" />
+             <img src="https://dummyimage.com/400x600/333/666.png&text=Photo+2" alt="Sample Box 2" style="height: 350px; width: 250px; object-fit: cover; border-radius: 20px; transform: rotate(5deg) scale(0.9); z-index: 1; margin-left: -80px; border: 4px solid #101820;" />
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq__wrapper">
+          <h1 style="font-size: clamp(60px, 12vw, 150px); font-weight: 900; line-height: 0.9; text-transform: uppercase; margin-bottom: 40px; color:#fff;">What the faq</h1>
+          <div class="faq__list">
+            
+            <div data-click="faq" class="faq">
+              <div class="faq__trigger">
+                <div class="faq__heading">Do you deliver nationwide?</div>
+                <div class="faq__icon"><div class="faq__icon-line is--horizontal"></div><div class="faq__icon-line is--vertical"></div></div>
+              </div>
+              <div class="faq__content">
+                <div class="faq__content-spacing">
+                  Yes! We deliver our delicious plantain chips and coated groundnuts across the country. Just contact us for bulk orders or find us in your local supermarket.
+                </div>
+              </div>
+            </div>
+
+            <div data-click="faq" class="faq">
+              <div class="faq__trigger">
+                <div class="faq__heading">What events do you cater for?</div>
+                <div class="faq__icon"><div class="faq__icon-line is--horizontal"></div><div class="faq__icon-line is--vertical"></div></div>
+              </div>
+              <div class="faq__content">
+                <div class="faq__content-spacing">
+                  We cater for all events ranging from weddings, corporate parties, birthdays, to picnics. Choose from our wide selection of local snacks!
+                </div>
+              </div>
+            </div>
+
+            <div data-click="faq" class="faq">
+              <div class="faq__trigger">
+                <div class="faq__heading">Are your chips vegan-friendly?</div>
+                <div class="faq__icon"><div class="faq__icon-line is--horizontal"></div><div class="faq__icon-line is--vertical"></div></div>
+              </div>
+              <div class="faq__content">
+                <div class="faq__content-spacing">
+                  Absolutely! Our snacks contain simple, honest plant-based ingredients. Plantains, salt, and spices.
+                </div>
+              </div>
+            </div>
+
+            <div data-click="faq" class="faq">
+              <div class="faq__trigger">
+                <div class="faq__heading">Can I order in bulk?</div>
+                <div class="faq__icon"><div class="faq__icon-line is--horizontal"></div><div class="faq__icon-line is--vertical"></div></div>
+              </div>
+              <div class="faq__content">
+                <div class="faq__content-spacing">
+                  Yes, we offer bulk pricing for retailers, offices, and large private events. Contact us via the form above for a custom quote and volume discounts.
+                </div>
+              </div>
+            </div>
+
+            <div data-click="faq" class="faq">
+              <div class="faq__trigger">
+                <div class="faq__heading">What snacks do you offer?</div>
+                <div class="faq__icon"><div class="faq__icon-line is--horizontal"></div><div class="faq__icon-line is--vertical"></div></div>
+              </div>
+              <div class="faq__content">
+                <div class="faq__content-spacing">
+                  Our core products are premium, naturally-flavored plantain chips (sweet and savory) and honey-roasted or salt-coated groundnuts.
+                </div>
+              </div>
+            </div>
+
+            <div data-click="faq" class="faq">
+              <div class="faq__trigger">
+                <div class="faq__heading">What is the shelf life of your products?</div>
+                <div class="faq__icon"><div class="faq__icon-line is--horizontal"></div><div class="faq__icon-line is--vertical"></div></div>
+              </div>
+              <div class="faq__content">
+                <div class="faq__content-spacing">
+                  Our snacks are made fresh without artificial preservatives and have a shelf life of up to 6 months when stored in a cool, dry place.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="faq__wrapper" style="margin-bottom: 50px;">
+          <h2 class="heading--120 text-color--yellow" style="font-size: clamp(40px, 6vw, 80px);">Our location</h2>
+          <div class="mapBox">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7347780423092!2d-0.2323198!3d5.6061385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf99c02cc2149d%3A0x1ac16909ca639c5a!2sCapitol%20Catering!5e0!3m2!1sen!2sgh!4v1773346434157!5m2!1sen!2sgh" width="100%" height="420" style="border:0; border-radius: 40px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
       </div>
-    </section>
-    <!--================Contact Area =================-->
+    </div>
+    <!--================ End Redesigned Contact Area =================-->
 
     <!-- Success Modal -->
     <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
@@ -289,78 +349,33 @@
       </div>
     </div>
 
-    <!--================ start footer Area  =================-->
-    <footer class="footer-area p_120">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="single-footer-widget tp_widgets">
-              <h6 class="footer_title">Quick Links</h6>
-              <ul class="list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
-          </div>          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="single-footer-widget tp_widgets">
-              <h6 class="footer_title">Contact Us</h6>
-              <ul class="list">
-                <li><i class="fa fa-phone"></i> <a href="tel:+233537225557">+233 53 722 5557</a></li>
-                <li><i class="fa fa-envelope"></i> <a href="mailto:info@longdonfoods.com">info@longdonfoods.com</a></li>
-              </ul>
-            </div>
-          </div>          <div class="col-lg-6 col-md-6 col-sm-6">
-            <aside class="f_widget news_widget">
-              <div class="f_title">
-                <h3 class="footer_title">Newsletter</h3>
-              </div>
-              <p>Stay updated with our latest trends</p>
-              <div id="mc_embed_signup">
-                <form
-                  target="_blank"
-                  action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                  method="get"
-                  class="subscribe_form relative"
-                >
-                  <div class="input-group d-flex flex-row">
-                    <input
-                      name="EMAIL"
-                      placeholder="Enter email address"
-                      onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Email Address '"
-                      required=""
-                      type="email"
-                    />
-                    <button class="btn sub-btn">
-                      <span class="lnr lnr-arrow-right"></span>
-                    </button>
-                  </div>
-                  <div class="mt-10 info"></div>
-                </form>
-              </div>
-            </aside>
-          </div>
+    <!--================ Redesigned Footer =================-->
+    <footer class="swb-footer">
+      <div class="container" style="position: relative;">
+        
+        <div class="swb-socials">
+          <a href="https://www.instagram.com/longdonfoods?igsh=b3Zvc2t1cnZ2NjN0" target="_blank" class="swb-social-btn"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@longdonfoods" target="_blank" class="swb-social-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="16" height="16"><path d="M448 209.9a210.1 210.1 0 01-122.8-39.3v178.8A162.6 162.6 0 11185 188.3v89.9a74.6 74.6 0 1052.2 71.2V0h88a121 121 0 00122.8 121z"/></svg>
+          </a>
+          <a href="https://wa.me/233537225557" target="_blank" class="swb-social-btn"><i class="fa fa-whatsapp"></i></a>
+          <a href="#" target="_blank" class="swb-social-btn"><i class="fa fa-linkedin"></i></a>
         </div>
-        <div
-          class="row footer-bottom d-flex justify-content-between align-items-center"
-        >
-          <div class="col-lg-3 col-md-6 col-md-4 footer-social">
-            <a
-              href="https://www.instagram.com/longdonfoods?igsh=b3Zvc2t1cnZ2NjN0"
-              target="_blank"
-              rel="noopener"
-              ><i class="fa fa-instagram"></i
-            ></a>
-            <a href="https://wa.me/233537225557" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i></a>
-            <a href="https://www.tiktok.com/@longdonfoods" target="_blank" rel="noopener" class="tiktok-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="14" height="14" style="vertical-align:middle;"><path d="M448 209.9a210.1 210.1 0 01-122.8-39.3v178.8A162.6 162.6 0 11185 188.3v89.9a74.6 74.6 0 1052.2 71.2V0h88a121 121 0 00122.8 121z"/></svg></a>
+
+        <h1 class="swb-footer-huge-text">Let's be friends<br>with benefits.</h1>
+        <div class="swb-we-got-snacks">We've got<br>snacks!</div>
+
+        <div class="swb-footer-bottom">
+          <div>
+            <a href="mailto:info@longdonfoods.com" style="color:#fff; text-decoration:none;">INFO@LONGDONFOODS.COM</a> 
+          </div>
+          <div>
+            <span style="opacity: 0.5;">© 2024 LONGDONFOODS</span>
           </div>
         </div>
       </div>
     </footer>
-    <!--================ End footer Area  =================-->
+    <!--================ End Redesigned Footer =================-->
 
     <!--================Contact Success and Error message Area =================-->
     <div id="success" class="modal modal-message fade" role="dialog">
@@ -440,8 +455,36 @@
 
       // Initialize nice-select for the dropdowns
       $(document).ready(function() {
-        $('#inquiry_type').niceSelect();
-        $('#event_type').niceSelect();
+        if ($().niceSelect) {
+          $('#inquiry_type').niceSelect();
+          $('#event_type').niceSelect();
+        }
+
+        // Accordion FAQ - vanilla JS
+        document.querySelectorAll('[data-click="faq"]').forEach((faq) => {
+          faq.addEventListener('click', () => {
+            const isOpen = faq.classList.contains('open');
+            document.querySelectorAll('[data-click="faq"].open').forEach((openFaq) => {
+              openFaq.classList.remove('open');
+            });
+            if (!isOpen) {
+              faq.classList.add('open');
+            }
+          });
+        });
+
+        // Menu overlay script
+        const menuOpenBtn = document.getElementById('menuOpenBtn');
+        const menuCloseBtn = document.getElementById('menuCloseBtn');
+        const menuOverlay = document.getElementById('menuOverlay');
+        if (menuOpenBtn && menuCloseBtn && menuOverlay) {
+          menuOpenBtn.addEventListener('click', () => {
+              menuOverlay.classList.add('active');
+          });
+          menuCloseBtn.addEventListener('click', () => {
+              menuOverlay.classList.remove('active');
+          });
+        }
         
         // Show/hide event-specific fields based on inquiry type
         $('#inquiry_type').on('change', function() {
